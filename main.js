@@ -3,20 +3,25 @@
 
 var $car = document.querySelector('.car');
 
-function test(event) {
-  if (event.key === 'ArrowLeft') {
-    $car.className = 'car west';
+function arrow(event) {
+  if (event.code === 'ArrowLeft') {
     data.direction = 'west';
-  } else if (event.key === 'ArrowRight') {
-    $car.className = 'car east';
+  } else if (event.code === 'ArrowRight') {
     data.direction = 'east';
-  } else if (event.key === 'ArrowUp') {
-    $car.className = 'car north';
+  } else if (event.code === 'ArrowUp') {
     data.direction = 'north';
-  } else if (event.key === 'ArrowDown') {
-    $car.className = 'car south';
+  } else if (event.code === 'ArrowDown') {
     data.direction = 'south';
   }
+  if (event.code === 'Space') {
+    setInterval(space, 1.6);
+  }
+  $car.className = 'car ' + data.direction;
 }
 
-window.addEventListener('keydown', test);
+function space() {
+  data.location.x++;
+  $car.style.left = data.location.x + 'px';
+}
+
+window.addEventListener('keydown', arrow);
