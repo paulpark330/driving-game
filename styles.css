@@ -3,9 +3,8 @@ body {
 }
 
 .car {
-  width: 8em;
+  width: 8rem;
   position: absolute;
-  top: 1rem;
   left: 0;
   transition: 0.2s;
 }
