@@ -26,8 +26,19 @@ function arrow(event) {
 }
 
 function space() {
-  data.location.x++;
-  $car.style.left = data.location.x + 'px';
+  if (data.direction === 'east') {
+    $car.style.left = data.location.x + 'px';
+    data.location.x++;
+  } else if (data.direction === 'west') {
+    $car.style.left = data.location.x + 'px';
+    data.location.x--;
+  } else if (data.direction === 'north') {
+    $car.style.top = data.location.y + 'px';
+    data.location.y--;
+  } else if (data.direction === 'south') {
+    $car.style.top = data.location.y + 'px';
+    data.location.y++;
+  }
 }
 
 window.addEventListener('keydown', arrow);
