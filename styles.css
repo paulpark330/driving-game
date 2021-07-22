@@ -7,4 +7,21 @@ body {
   position: absolute;
   top: 1rem;
   left: 0;
+  transition: 0.2s;
+}
+
+.west {
+  transform: rotate(180deg);
+}
+
+.east {
+  transform: rotate(0deg);
+}
+
+.north {
+  transform: rotate(-90deg);
+}
+
+.south {
+  transform: rotate(90deg);
 }
