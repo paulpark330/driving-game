@@ -2,6 +2,7 @@
 /* exported data */
 
 var $car = document.querySelector('.car');
+var intervalId = null;
 
 function arrow(event) {
   if (event.code === 'ArrowLeft') {
@@ -14,7 +15,12 @@ function arrow(event) {
     data.direction = 'south';
   }
   if (event.code === 'Space') {
-    setInterval(space, 1.6);
+    data.moving = !data.moving;
+    if (data.moving === false) {
+      intervalId = setInterval(space, 1.6);
+    } else if (data.moving === true) {
+      clearInterval(intervalId);
+    }
   }
   $car.className = 'car ' + data.direction;
 }

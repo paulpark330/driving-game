@@ -6,7 +6,6 @@ body {
   width: 8rem;
   position: absolute;
   left: 0;
-  transition: 0.2s;
 }
 
 .west {
