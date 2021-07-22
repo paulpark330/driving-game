@@ -1,0 +1,10 @@
+body {
+  background-color: green;
+}
+
+.car {
+  width: 8em;
+  position: absolute;
+  top: 1rem;
+  left: 0;
+}
